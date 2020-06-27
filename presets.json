@@ -1,0 +1,17 @@
+{
+  "Reset": {
+    "status": null,
+    "snooze_minutes": 0,
+    "emoji": null
+  },
+  "FocusMode": {
+    "status": "Focus mode",
+    "snooze_minutes": 120,
+    "emoji": ":headphones:"
+  },
+  "Default": {
+    "status": "Remote (Amsterdam)",
+    "snooze_minutes": null,
+    "emoji": ":globe_with_meridians:"
+  }
+}
