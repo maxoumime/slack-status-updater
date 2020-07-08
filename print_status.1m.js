@@ -27,9 +27,7 @@ const main = async() => {
   console.log(emoji)
   console.log('---')
 
-  if (profile.status_text && profile.status_text.length > 0) {
-    console.log(`Status: ${profile.status_text}`)
-  }
+  console.log(`Slack Status: ${profile.status_text || 'None'}`)
 
   Object.keys(presets)
     .forEach(key => {

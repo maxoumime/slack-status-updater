@@ -13,5 +13,16 @@
     "status": "Remote (Amsterdam)",
     "snooze_minutes": null,
     "emoji": ":globe_with_meridians:"
+  },
+  "Meeting": {
+    "status": "In a meeting",
+    "duration_minutes": 60,
+    "emoji": ":calendar:"
+  },
+  "BRB": {
+    "status": "Be right back",
+    "duration_minutes": 10,
+    "status_only": true,
+    "emoji": ":coffee:"
   }
 }

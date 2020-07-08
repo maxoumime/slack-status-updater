@@ -14,8 +14,9 @@ const main = async(preset) => {
   if (DEBUG)
     console.log((await response.json()))
 
-  response = await slack.updateSnooze(preset.snooze_minutes)
-
+  const snoozeTime = preset.status_only ? null : preset.duration_minutes
+  response = await slack.updateSnooze(snoozeTime)
+  
   if (DEBUG)
     console.log((await response.json()))
 }
