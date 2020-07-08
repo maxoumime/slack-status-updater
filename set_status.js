@@ -4,6 +4,7 @@ require('dotenv').config({ path: '/Users/maximebertheau/Bitbar/slack-focus-mode/
 const slack = require('./slack')
 const presets = require('./presets.json')
 const argv = require('minimist')(process.argv.slice(2));
+const doNotDisturb = require('@sindresorhus/do-not-disturb');
 
 const DEBUG = argv.debug
 
@@ -14,11 +15,19 @@ const main = async(preset) => {
   if (DEBUG)
     console.log((await response.json()))
 
-  const snoozeTime = preset.status_only ? null : preset.duration_minutes
+  const snoozeTime = preset.status_only === true ? null : preset.duration_minutes
   response = await slack.updateSnooze(snoozeTime)
   
   if (DEBUG)
     console.log((await response.json()))
+
+  if (preset.update_system_dnd === false) return
+
+  if (preset.status_only === true) {
+    await doNotDisturb.enable()
+  } else {
+    await doNotDisturb.disable()
+  }
 }
 
 if (argv._.length === 0) throw "Missing argument"
