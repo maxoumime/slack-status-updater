@@ -9,7 +9,7 @@ const doNotDisturb = require('@sindresorhus/do-not-disturb');
 const DEBUG = argv.debug
 
 const main = async(preset) => {
-  const seconds = preset.snooze_minutes * 60
+  const seconds = preset.duration_minutes * 60
   let response = await slack.updateStatus(preset.emoji, preset.status, seconds)
 
   if (DEBUG)
