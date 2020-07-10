@@ -21,9 +21,7 @@ const main = async(preset) => {
   if (DEBUG)
     console.log((await response.json()))
 
-  if (preset.update_system_dnd === false) return
-
-  if (preset.status_only === true) {
+  if (snoozeTime) {
     await doNotDisturb.enable()
   } else {
     await doNotDisturb.disable()
