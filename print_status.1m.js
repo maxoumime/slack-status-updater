@@ -1,6 +1,7 @@
 #!/usr/bin/env /Users/maximebertheau/.nvm/versions/node/v14.4.0/bin/node
+const pluginPath = '/Users/maximebertheau/Bitbar/slack-focus-mode'
 
-require('dotenv').config({ path: '/Users/maximebertheau/Bitbar/slack-focus-mode/.env' })
+require('dotenv').config({ path: `${pluginPath}/.env` })
 const emojiData = require('emoji-data')
 const slack = require('./slack')
 const presets = require('./presets.json')
@@ -33,7 +34,7 @@ const main = async() => {
     .forEach(key => {
       const preset = presets[key]
 
-      console.log(`${findEmoji(preset.emoji) || '👌'} ${preset.status || key} | bash=/Users/maximebertheau/Bitbar/slack-focus-mode/set_status.js param1=${key} refresh=true terminal=false`)
+      console.log(`${findEmoji(preset.emoji) || '👌'} ${preset.status || key} | bash=${pluginPath}/set_status.js param1=${key} refresh=true terminal=false`)
     })
 }
 

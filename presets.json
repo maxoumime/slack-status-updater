@@ -9,11 +9,6 @@
     "duration_minutes": 120,
     "emoji": ":headphones:"
   },
-  "Default": {
-    "status": "Remote (Amsterdam)",
-    "duration_minutes": null,
-    "emoji": ":globe_with_meridians:"
-  },
   "Meeting": {
     "status": "In a meeting",
     "duration_minutes": 60,

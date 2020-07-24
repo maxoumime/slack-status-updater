@@ -1,6 +1,7 @@
 #!/usr/bin/env /Users/maximebertheau/.nvm/versions/node/v14.4.0/bin/node
+const pluginPath = '/Users/maximebertheau/Bitbar/slack-focus-mode'
 
-require('dotenv').config({ path: '/Users/maximebertheau/Bitbar/slack-focus-mode/.env' })
+require('dotenv').config({ path: `${pluginPath}/.env` })
 const slack = require('./slack')
 const presets = require('./presets.json')
 const argv = require('minimist')(process.argv.slice(2));
